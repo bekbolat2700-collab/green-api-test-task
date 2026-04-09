@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>GREEN-API Тестовое задание</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="input-section">
+            <input type="text" id="idInstance" placeholder="idInstance">
+            <input type="text" id="apiTokenInstance" placeholder="ApiTokenInstance">
+            
+            <button onclick="getSettings()">getSettings</button>
+            <button onclick="getStateInstance()">getStateInstance</button>
+            
+            <div class="spacer"></div>
+            
+            <input type="text" id="phoneNumber" placeholder="77771234567 (номер получателя)">
+            <textarea id="messageText" placeholder="Введите текст сообщения..."></textarea>
+            <button onclick="sendMessage()">sendMessage</button>
+            
+            <div class="spacer"></div>
+            
+            <input type="text" id="phoneNumberFile" placeholder="77771234567 (номер получателя)">
+            <input type="text" id="fileUrl" placeholder="https://mysite.com/img.png (ссылка на файл)">
+            <button onclick="sendFileByUrl()">sendFileByUrl</button>
+        </div>
+
+        <div class="output-section">
+            <label>Response:</label>
+            <textarea id="responseField" readonly placeholder="Ответ от методов API будет здесь..."></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
