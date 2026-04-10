@@ -1,6 +1,11 @@
-FROM nginx:stable-alpine
-COPY index.html /usr/share/nginx/html/
-COPY script.js /usr/share/nginx/html/
-COPY style.css /usr/share/nginx/html/
+# Stage 1: Сборка
+FROM alpine:latest as builder
+WORKDIR /app
+COPY . .
+
+# Stage 2: Финальный образ
+FROM nginx:alpine
+COPY --from=builder /app /usr/share/nginx/html
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
